@@ -1,2 +1,12 @@
 *.class
 *.log
+.project
+.classpath
+.cache-main
+/.settings
+/target/
+/bin/
+/project/
+!/project/plugins.sbt
+!/project/build.properties
+

@@ -1,4 +1,4 @@
-package datax.test
+package railroad
 
 import java.io.File
 import java.io.StringReader
@@ -40,7 +40,7 @@ object RailRoadRepository {
     val rrDiagramToSVG = new RRDiagramToSVG();
     val svg = rrDiagramToSVG.convert(rrDiagram);
 
-    val tmp = new File("/home/fabk/bla.svg")
+    val tmp = new File(System.getProperty("user.dir")+"/svg/railroad.svg")
     FileUtils.writeStringToFile(tmp, svg, StandardCharsets.UTF_8, false)
 
     println("Written to " + tmp.getCanonicalPath())
