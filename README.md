@@ -1,6 +1,6 @@
 # Railroad Diagrams
 
-A collection of Railroad projects
+A collection of Railroad Diagram generator projects
 
 Scala
 =====
