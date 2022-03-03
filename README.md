@@ -12,6 +12,6 @@ rrdiagram-js by Christopher Deckers - Github Repository: https://github.com/Chrr
 
 Python & Javascript
 ===================
-Railroad-diagram Generator by Tab Atkins Jr. - Github Repository: https://github.com/tabatkins/railroad-diagrams
+railroad-diagrams by Tab Atkins Jr. - Github Repository: https://github.com/tabatkins/railroad-diagrams
 
 
