@@ -10,7 +10,7 @@ import scala.xml.Elem
 
 abstract class ViewHTML {
   System.setProperty("java.awt.headless", "false")
-  protected val base = Files.createTempDirectory("dashboard-rendering").toFile().getAbsolutePath()
+  protected val base = System.getProperty("java.io.tmpdir")
 
   def showHTML() = {
     val file = generate()
