@@ -9,7 +9,9 @@ scalaVersion := "2.12.3"
 libraryDependencies ++= {
   Seq(
   "net.nextencia" % "rrdiagram" % "0.9.4",
-   "commons-io" % "commons-io" % "2.6")
+   "commons-io" % "commons-io" % "2.6",
+   "org.scala-lang.modules" %% "scala-xml" % "2.0.1"
+   )
 }
 
 EclipseKeys.withSource := true

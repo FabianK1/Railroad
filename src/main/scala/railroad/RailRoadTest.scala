@@ -15,14 +15,26 @@ import net.nextencia.rrdiagram.grammar.rrdiagram.RRDiagram
 import net.nextencia.rrdiagram.grammar.rrdiagram.RRDiagramToSVG
 import net.nextencia.rrdiagram.grammar.rrdiagram.RRSequence
 import net.nextencia.rrdiagram.grammar.rrdiagram.RRText
+import viewsupport.ViewHTML
 
-object RailRoadRepository {
+object RailRoadRepository extends ViewHTML {
 
   def main(args: Array[String]): Unit = {
-    run()
+    showHTML()
+  }
+
+  def htmlContent() = {
+    xml.Unparsed(getSVG())
   }
 
   def run() = {
+
+    val tmp = new File(System.getProperty("user.dir") + "/svg/railroad.svg")
+    FileUtils.writeStringToFile(tmp, getSVG(), StandardCharsets.UTF_8, false)
+    println("Written to " + tmp.getCanonicalPath())
+  }
+
+  protected def getSVG() = {
     val reader = new StringReader("")
     val converter = new BNFToGrammar()
 
@@ -37,13 +49,8 @@ object RailRoadRepository {
         new RRText(RRText.Type.RULE, "AFO300/1", null),
         new RRText(RRText.Type.RULE, "AFO400/1", null)))
 
-    val rrDiagramToSVG = new RRDiagramToSVG();
-    val svg = rrDiagramToSVG.convert(rrDiagram);
-
-    val tmp = new File(System.getProperty("user.dir")+"/svg/railroad.svg")
-    FileUtils.writeStringToFile(tmp, svg, StandardCharsets.UTF_8, false)
-
-    println("Written to " + tmp.getCanonicalPath())
+    val rrDiagramToSVG = new RRDiagramToSVG()
+    rrDiagramToSVG.convert(rrDiagram)
   }
 
 }
